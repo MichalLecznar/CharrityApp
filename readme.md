@@ -1,12 +1,18 @@
 <img alt="Logo" src="http://coderslab.pl/svg/logo-coderslab.svg" width="400">
 
 
-Przed przystąpieniem do pracy  przeczytaj poniższe wskazówki.
-## Jak zacząć?
+The goal of the project is create place where everyone can give away unnecessary things to trusted institutions.
 
-1. Zaimportuj projekt jako projekt `Maven`, wg poniższych wskazówek:
+Used technologies:
 
-	* W `IntelliJ` wybieramy: `File –> New –> Project from Existing Sources...`
-	* Wskazujemy lokalizację katalogu ze sklonowanym projektem i zatwierdzamy.
-	* Następnie w nowym oknie wybieramy: `Import project from external model` i wskazujemy `Maven`
-	* Wybieramy kolejno opcje: `Next –> Next –> Next –> Finish`
+Java
+
+HTML
+
+CSS
+
+Spring
+
+Hibernate
+
+
