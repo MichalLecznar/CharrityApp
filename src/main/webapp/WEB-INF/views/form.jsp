@@ -47,7 +47,8 @@
                 </c:forEach>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <form:button type="button" style="display: none;" id="prevButtonStep1" class="btn prev-step">Wstecz</form:button>
+                    <form:button type="button" class="btn next-step">Dalej</form:button>
                 </div>
             </div>
 
@@ -63,8 +64,8 @@
                 </div>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <form:button type="button" id="prevButtonStep2" class="btn prev-step">Wstecz</form:button>
+                    <form:button type="button" class="btn next-step">Dalej</form:button>
                 </div>
             </div>
 
@@ -85,8 +86,8 @@
                     </c:forEach>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <form:button type="button" id="prevButtonStep3" class="btn prev-step">Wstecz</form:button>
+                    <form:button type="button" class="btn next-step">Dalej</form:button>
                 </div>
             </div>
 
@@ -138,24 +139,14 @@
 
                         <div class="form-group form-group--inline">
                                 <label for="pickUpComment">Uwagi dla kuriera</label>
-                                <form:textarea type="text" id="pickUpComment" path="pickUpComment"/>
+                                <form:textarea type="text" id="pickUpComment" placeholder="Komentarz nie jest wymagany, ale ułatwia pracę kurierowi" path="pickUpComment"/>
                                 <form:errors path="pickUpComment" />
                         </div>
                     </div>
                 </div>
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step" onclick="showCategoryCheck();
-                                                                          showQuantityInput();
-                                                                          showStreetInput();
-                                                                          showCityInput();
-                                                                          showZipCodeInput();
-                                                                          showPickUpDateInput();
-                                                                          showPickUpTimeInput();
-                                                                          showPickUpCommentInput();
-                                                                          showInstitutionSelect();"
-                    >Dalej
-                    </button>
+                    <form:button type="button" id="prevButtonStep4" class="btn prev-step">Wstecz</form:button>
+                    <form:button type="button" class="btn next-step">Dalej</form:button>
                 </div>
             </div>
 

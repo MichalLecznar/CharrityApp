@@ -38,49 +38,6 @@
             </h1>
         </div>
     </div>
-
-    <script language="JavaScript">
-        function showQuantityInput() {
-            document.getElementById('displayQuantity').innerHTML =
-                document.getElementById("quantity").value;
-        }
-    </script>
-    <script language="JavaScript">
-        function showStreetInput() {
-            document.getElementById('displayStreet').innerHTML =
-                document.getElementById("street").value;
-        }
-    </script>
-    <script language="JavaScript">
-        function showCityInput() {
-            document.getElementById('displayCity').innerHTML =
-                document.getElementById("city").value;
-        }
-    </script>
-    <script language="JavaScript">
-        function showZipCodeInput() {
-            document.getElementById('displayZipCode').innerHTML =
-                document.getElementById("zipCode").value;
-        }
-    </script>
-    <script language="JavaScript">
-        function showPickUpDateInput() {
-            document.getElementById('displayPickUpDate').innerHTML =
-                document.getElementById("pickUpDate").value;
-        }
-    </script>
-    <script language="JavaScript">
-        function showPickUpTimeInput() {
-            document.getElementById('displayPickUpTime').innerHTML =
-                document.getElementById("pickUpTime").value;
-        }
-    </script>
-    <script language="JavaScript">
-        function showPickUpCommentInput() {
-            document.getElementById('displayPickUpComment').innerHTML =
-                document.getElementById("pickUpComment").value;
-        }
-    </script>
     <script language="JavaScript">
         function showCategoryCheck() {
             const checkboxes = document.querySelectorAll(`input[name="categories"]:checked`);
@@ -89,17 +46,18 @@
                 arr.push(checkbox.nextElementSibling.nextElementSibling.innerHTML);
             });
             document.getElementById('displayCategory').innerHTML = arr.join(", ");
+
+            return arr;
         }
     </script>
 
-    <script language="JavaScript">
-        function showInstitutionSelect() {
-            const checked = document.querySelectorAll(`input[name="institution"]:checked`);
-            let arr = [];
-            checked.forEach((radio) => {
-                arr.push(radio.nextElementSibling.nextElementSibling.innerHTML);
-            });
-            document.getElementById('displayInstitution').innerHTML = arr;
+    <script>
+        function institutionSelect(){
+            const institution = document.querySelector(`input[name="institution"]:checked`);
+            document.getElementById('displayInstitution').innerHTML =
+                institution.nextElementSibling.nextElementSibling.innerHTML;
+                return institution;
         }
     </script>
+
 </header>

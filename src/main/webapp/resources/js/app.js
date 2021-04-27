@@ -152,6 +152,75 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // TODO: Validation
 
+      if(this.currentStep === 2){
+        const prevButton = document.querySelector("#prevButtonStep1");
+        if (showCategoryCheck().length === 0) {
+          alert("Musisz wybrać kategorię");
+          prevButton.click();
+          return false;
+        }
+      }
+
+      if(this.currentStep === 3){
+        const quantity = document.querySelector("#quantity").value;
+        const prevButton = document.querySelector("#prevButtonStep2");
+
+        if (quantity === "" || quantity === null) {
+          alert("Musisz wybrać ilość worków");
+          prevButton.click();
+          return false;
+        }
+      }
+
+      if(this.currentStep === 4){
+        const prevButton = document.querySelector('#prevButtonStep3');
+        if(institutionSelect() === null){
+          alert("Musisz wybrać jedną instytucję");
+          prevButton.click();
+          return false;
+        }
+      }
+
+      if(this.currentStep === 5){
+        const prevButton = document.querySelector("#prevButtonStep4");
+        const street = document.querySelector("#street").value;
+        const city = document.querySelector("#city").value;
+        const zipCode = document.querySelector("#zipCode").value;
+        const date = document.querySelector("#pickUpDate").value;
+        const time = document.querySelector("#pickUpTime").value;
+        const comment = document.querySelector("#pickUpComment").value;
+
+        if (street === null || street === "") {
+          alert("Adres jest wymagany");
+          prevButton.click();
+          return false;
+        }
+
+        if (city === null || city === "") {
+          alert("Miasto jest wymagane");
+          prevButton.click();
+          return false;
+        }
+
+        if (zipCode === null || zipCode === "") {
+          alert("Kod pocztowy jest wymagany");
+          prevButton.click();
+          return false;
+        }
+
+        if (date === null || date === "") {
+          alert("Data jest wymagana");
+          prevButton.click();
+          return false;
+        }
+
+        if (time === null || time === "") {
+          alert("Godzina odbioru jest wymagana");
+          prevButton.click();
+          return false;
+        }
+      }
+
       this.slides.forEach(slide => {
         slide.classList.remove("active");
 
@@ -164,6 +233,23 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+
+      if(this.currentStep === 5){
+        document.getElementById('displayQuantity').innerHTML =
+            document.getElementById("quantity").value;
+        document.getElementById('displayStreet').innerHTML =
+            document.getElementById("street").value;
+        document.getElementById('displayCity').innerHTML =
+            document.getElementById("city").value;
+        document.getElementById('displayZipCode').innerHTML =
+            document.getElementById("zipCode").value;
+        document.getElementById('displayPickUpDate').innerHTML =
+            document.getElementById("pickUpDate").value;
+        document.getElementById('displayPickUpTime').innerHTML =
+            document.getElementById("pickUpTime").value;
+        document.getElementById('displayPickUpComment').innerHTML =
+            document.getElementById("pickUpComment").value;
+      }
     }
 
   }

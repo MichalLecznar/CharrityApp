@@ -23,7 +23,7 @@ public class Donation {
     @ManyToMany
     private List<Category> categories;
 
-    @NotNull(message = "Pole nie może byc puste")
+    @NotNull(message = "Musisz wybrać jedno pole")
     @ManyToOne
     private Institution institution;
 
